@@ -1,0 +1,119 @@
+# Roque_Alexander_Pineda_Castro
+Fundamentos de Diseño
+
+Responsabilidad Única
+
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+        
+    def area(self):
+        resultado = self.ancho * self.alto 
+        return resultado 
+
+r = Rectangulo(10,7)
+print("Area del rectangulo %.2f" %r.area())
+
+
+Abierto/ Cerrado
+
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+        
+    def area(self):
+        resultado = self.ancho * self.alto 
+        return resultado 
+    
+    def perimetro(self):
+        resultado = 2 * (self.ancho + self.alto) 
+        return resultado
+
+r = Rectangulo(10,7)
+print("Area del rectangulo %.2f" %r.area())
+print("Perimetro del rectangulo %.2f" %r.perimetro())
+
+Sustitución de  Liskov
+
+class Rectangulo:
+    def __init__(self, base, altura, origen):
+        self.base = base
+        self.altura = altura
+        self.origen = origen
+
+    def trasladar(self, dx = 0, dy = 0):
+        self.origen = self.origen + Punto(dx,dy)
+
+    def area(self):
+        return self.base * self.altura
+
+    def __str__(self):
+
+        return "Base: %s, Altura: %s, Esquina inf. izq.: %s " % (self.base, self.altura, self.origen)
+   
+   Segreción de Interaz
+   
+  class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+        
+    def area(self):
+        resultado = self.ancho * self.alto 
+        return resultado 
+    
+    def perimetro(self):
+        resultado = 2 * (self.ancho + self.alto) 
+        return resultado
+    
+r = Rectangulo(10,7)
+print("Area del rectangulo %.2f" %r.area())
+print("Perimetro del rectangulo %.2f" %r.perimetro())
+    
+class Triangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+       
+        
+    def areat(self):
+        resultado = self.base * self.altura / 2
+        return resultado
+    
+r = Triangulo(3,4)
+print("Area del triangulo %.2f" %r.areat())
+     
+Inversión de dependecia 
+
+class Triangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+       
+        
+    def areat(self):
+        resultado = self.base * self.altura / 2
+        return resultado
+    
+r = Triangulo(3,4)
+print("Area del triangulo %.2f" %r.areat())
+
+class Rectangulo:
+    def __init__(self, ancho, alto):
+        self.ancho = ancho
+        self.alto = alto
+        
+    def area(self):
+        resultado = self.ancho * self.alto 
+        return resultado 
+    
+    def perimetro(self):
+        resultado = 2 * (self.ancho + self.alto) 
+        return resultado
+    
+r = Rectangulo(10,7)
+print("Area del rectangulo %.2f" %r.area())
+print("Perimetro del rectangulo %.2f" %r.perimetro())
+    
